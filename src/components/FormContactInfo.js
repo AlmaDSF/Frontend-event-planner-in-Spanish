@@ -21,6 +21,8 @@ const FormContactInfo = (props) => {
     const handleNewContactSubmit = (e) => {
         console.log("press button")
         e.preventDefault();
+        alert(`Thanks ${formData.first_name}: we'll send you more events soon.`)
+        setFormData(INITIAL_CONTACT_INFO)
         props.addContactCallbackFunc(formData);
 };
     return (
@@ -57,7 +59,7 @@ const FormContactInfo = (props) => {
                         onChange={handleChange}
                     />
                 
-            </form>;
+            </form>
         </div>
     );
     };

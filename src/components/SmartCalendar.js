@@ -9,7 +9,6 @@ function SmartCalendar() {
 
   return (
     <div className='app'>
-      {/* <h1 className='text-center'>React Calendar</h1> */}
 
       <p className='text-center'>
         <span className='bold'>Selected Date:</span>{' '}
