@@ -56,7 +56,7 @@ function App() {
 
 // >>>>>>>>>>>>>>>>>>>>>>>FORM<<<<<<<<<<<<<<<<<<<<<<<<<<<<
   const [contactList, setContactList] = useState([]);
-  const postman_url = "http://127.0.0.1:5000/contact_info";
+  const postman_url = "https://backend-event-planner-spanish.herokuapp.com/contact_info";
 
 // form -> send new contact info
   const addNewContactInfo = (newContactInfo) => {
