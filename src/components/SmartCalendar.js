@@ -4,8 +4,12 @@ import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 
 
-function SmartCalendar() {
+function SmartCalendar(props) {
+  const listEventByDate =  props.listEventByDate;
+
   const [date, setDate] = useState(new Date());
+  console.log(date)
+  // console.log(date)
 
   return (
     <div className='app'>
@@ -16,7 +20,11 @@ function SmartCalendar() {
       </p>
       
       <div className='calendar-container'>
-        <Calendar onChange={setDate} value={date} />
+        <Calendar 
+            onChange={setDate} 
+            value={date} 
+            onClick={() => listEventByDate({date})} 
+            />
       </div>
       
     </div>
@@ -24,3 +32,14 @@ function SmartCalendar() {
 }
 
 export default SmartCalendar;
+
+// inicial:
+
+// {/* <li onClick={() => listEventByDate(event_date)}> {event_name} </li> */}
+
+
+//14-17
+{/* <p className='text-center'>
+        <span className='bold'>Selected Date:</span>{' '}
+        {date.toDateString()}
+      </p> */}

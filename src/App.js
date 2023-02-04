@@ -5,42 +5,35 @@ import SmartCalendar from "./components/SmartCalendar";
 import FormContactInfo from "./components/FormContactInfo";
 import EventList from "./components/EventList";
 
-const INITIAL_EVENTS = [
-  {
-    id: 1,
-    title: "soccer",
-    type: "sport",
-    date: "Wed Feb 1 2023",
-    location: "5th ave south, Seattle Wa",
-  },
-  {
-    id: 5,
-    title: "story book in the park",
-    type: "family",
-    date: "Wed Feb 1 2023",
-    location: "1000 4th ave, Seattle Wa",
-  },
-  {
-    id: 8,
-    title: "farmers market",
-    type: "free",
-    date: "Wed Feb 1 2023",
-    location: "5031 university way Ne, Seattle Wa",
-  },
-  {
-    id: 10,
-    title: "music",
-    type: "concert",
-    date: "Wed Feb 1 2023",
-    location: "9219 35th ave ne, Seattle Wa",
-  },
-];
 
 function App() {
-  const [eventData, setEventData] = useState(INITIAL_EVENTS);
+
+  const [contactList, setContactList] = useState([]);
+  const url_event = "https://backend-event-planner-spanish.herokuapp.com/event_info";
+  const url_contact = "https://backend-event-planner-spanish.herokuapp.com/contact_info";
+
+  const [eventOneDate, setEventOneDate] = useState([]);
+  
+  const listEventByDate = (date) => {
+    axios
+      .get(`${url_event}?"date_event"=${date}`)
+      .then((response) => {
+        console.log(response.data)
+        const newEventList = [];
+        for (const event of eventOneDate) {
+          if (event.event_date === date ) {
+            newEventList.push(event);
+          }
+        }
+        setEventOneDate(newEventList);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   // >>>>>>>>>>>>>>>>>>>>>EVENTS<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-  // get events from one type:
+  // get events from one date:
   // const getOneTypeDate =
 
   // const getOneTypeDate = (type) => {
@@ -50,15 +43,33 @@ function App() {
   //     }
   //   }
   // };
+//>>>>>extra <<<<
+
+  //get cards from one board:
+  // const [eventTypeList, setEventTypeList] = useState([]);
+  // const getEventList = () => {
+  //   axios
+  //     .get(`${url_event}/event_types`)
+  //     .then((response) => {
+  //       console.log(response.data);
+  //       const newEventTypeList = response.data;
+  //       // setEventTypeList(newEventTypeList);
+  //       return newEventTypeList;
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // };
+  // getEventList()
+
 
   // >>>>>>>>>>>>>>>>>>>>>>>FORM<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-  const [contactList, setContactList] = useState([]);
-  const postman_url = "https://backend-event-planner-spanish.herokuapp.com/contact_info";
+
 
   // form -> send new contact info
   const addNewContactInfo = (newContactInfo) => {
     axios
-      .post(`${postman_url}`, newContactInfo)
+      .post(`${url_contact}`, newContactInfo)
       .then((response) => {
         const newContactForm = [...contactList];
         const newContactJson = {
@@ -73,37 +84,25 @@ function App() {
       });
   };
 
-  //>>>>>extra <<<<
-
-  //get cards from one board:
-  // const [eventTypeList, setEventTypeList] = useState([]);
-  const getEventList = () => {
-    axios
-      .get(`${postman_url}/event_types`)
-      .then((response) => {
-        console.log(response.data);
-        const newEventTypeList = response.data;
-        // setEventTypeList(newEventTypeList);
-        return newEventTypeList;
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-  // getEventList()
-
-  // The google api
 
   return (
     <div className="App">
-      <h1 className="App-header"> "Calendario de eventos:" </h1>
+        <h1 className="App-header"> "Calendario de eventos:" </h1>
 
-      <FormContactInfo addContactCallbackFunc={addNewContactInfo} />
+        <FormContactInfo 
+            addContactCallbackFunc={addNewContactInfo} />
 
-      <SmartCalendar />
+        <SmartCalendar 
+          listEventByDate={listEventByDate}
+        />
 
-      <p> Type of event: </p>
-      <EventList eventList={eventData} getEventList={getEventList} />
+        <p> List of events: </p>
+        
+        <EventList 
+            eventList={eventOneDate} 
+            // getEventList={getEventList}
+            listEventByDate = {listEventByDate}
+          />
     </div>
   );
 }
