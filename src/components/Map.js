@@ -1,8 +1,8 @@
-import React from "react";
 import GoogleMapReact from "google-map-react";
 import { Icon } from "@iconify/react";
 import locationIcon from "@iconify/icons-mdi/map-marker";
 import "./Map.css";
+import React from "react";
 
 const LocationPin = ({ text }) => (
   <div className="pin">
@@ -13,11 +13,11 @@ const LocationPin = ({ text }) => (
 
 const Map = ({ location, zoomLevel }) => (
   <div className="map">
-    <h2 className="map-h2">Event Location</h2>
+    <h2 className="map-h2">Events Location</h2>
 
     <div className="google-map">
       <GoogleMapReact
-        bootstrapURLKeys={{ key: something }}
+        bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_API_KEY }}
         defaultCenter={location}
         defaultZoom={zoomLevel}
       >
