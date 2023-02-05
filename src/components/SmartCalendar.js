@@ -10,7 +10,9 @@ function SmartCalendar(props) {
   const [date, setDate] = useState(new Date());
   console.log(date)
   // console.log(date)
-
+  const handleClick = (e) => {
+    listEventByDate(new Date(e))
+  }
   return (
     <div className='app'>
 
@@ -18,12 +20,12 @@ function SmartCalendar(props) {
         <span className='bold'>Selected Date:</span>{' '}
         {date.toDateString()}
       </p>
-      
+      <button onClick={handleClick} >Hazme Click</button>
       <div className='calendar-container'>
         <Calendar 
             onChange={setDate} 
             value={date} 
-            onClick={() => listEventByDate({date})} 
+            onClickDay={handleClick}
             />
       </div>
       
@@ -32,14 +34,3 @@ function SmartCalendar(props) {
 }
 
 export default SmartCalendar;
-
-// inicial:
-
-// {/* <li onClick={() => listEventByDate(event_date)}> {event_name} </li> */}
-
-
-//14-17
-{/* <p className='text-center'>
-        <span className='bold'>Selected Date:</span>{' '}
-        {date.toDateString()}
-      </p> */}

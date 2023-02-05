@@ -15,13 +15,16 @@ function App() {
   const [eventOneDate, setEventOneDate] = useState([]);
   
   const listEventByDate = (date) => {
+    var convertedDate = ""+ date.getFullYear()+"-"+date.getMonth()+"-"+date.getDate()
+  
     axios
-      .get(`${url_event}?"date_event"=${date}`)
+      .get(`${url_event}?date_event=${convertedDate}`)
       .then((response) => {
         console.log(response.data)
         const newEventList = [];
-        for (const event of eventOneDate) {
-          if (event.event_date === date ) {
+        for (const event of response.data) {
+          //TODO: The comparison might be error prone given the slice function
+          if (event.event_date.replace(/,/g, "").slice(0,15)=== date.toGMTString().replace(/,/g, "").slice(0,15) ) {
             newEventList.push(event);
           }
         }
@@ -97,7 +100,7 @@ function App() {
         />
 
         <p> List of events: </p>
-        
+
         <EventList 
             eventList={eventOneDate} 
             // getEventList={getEventList}

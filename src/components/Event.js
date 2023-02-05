@@ -23,17 +23,18 @@ function Event(props) {
 
 
     return (
+        
         <div>
             {/* <li onClick={() => listEventByDate(date)}> {date} </li> */}
             <ul>
-                <li> Event Name: {event_name} </li>
+                <h3> Event Name: {event_name} </h3>
                 <li> Date: {event_date} </li>
                 <li> Time Start: {event_time_start} </li>
                 <li> Time End: {event_time_end} </li>
                 <li> Link : {event_link} </li>
                 <li> Event Type: </li>
                         <ul>
-                            <li> Family: {event_for_family} </li> 
+                            <li> Family: {event_for_family.toString} </li> 
                             <li> Adults: {event_for_adults} </li> 
                             <li> Concert: {event_a_concert} </li> 
                             <li> For free: {event_free} </li>
