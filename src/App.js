@@ -13,10 +13,9 @@ function App() {
   const url_contact = "https://backend-event-planner-spanish.herokuapp.com/contact_info";
 
   const [eventOneDate, setEventOneDate] = useState([]);
-  
+  // get -> event by date:
   const listEventByDate = (date) => {
     var convertedDate = ""+ date.getFullYear()+"-"+date.getMonth()+"-"+date.getDate()
-  
     axios
       .get(`${url_event}?date_event=${convertedDate}`)
       .then((response) => {
@@ -35,19 +34,7 @@ function App() {
       });
   };
 
-  // >>>>>>>>>>>>>>>>>>>>>EVENTS<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-  // get events from one date:
-  // const getOneTypeDate =
-
-  // const getOneTypeDate = (type) => {
-  //   for (const event in eventList) {
-  //     if (eventList[event].type === type) {
-  //       setEventData(eventList[event].type);
-  //     }
-  //   }
-  // };
-//>>>>>extra <<<<
-
+  // get direcctions:
   //get cards from one board:
   // const [eventTypeList, setEventTypeList] = useState([]);
   // const getEventList = () => {
@@ -66,10 +53,7 @@ function App() {
   // getEventList()
 
 
-  // >>>>>>>>>>>>>>>>>>>>>>>FORM<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-
-
-  // form -> send new contact info
+  // form -> send new contact info:
   const addNewContactInfo = (newContactInfo) => {
     axios
       .post(`${url_contact}`, newContactInfo)
@@ -99,7 +83,7 @@ function App() {
           listEventByDate={listEventByDate}
         />
 
-        <p> List of events: </p>
+        <h1> List of events: </h1>
 
         <EventList 
             eventList={eventOneDate} 

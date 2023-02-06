@@ -21,13 +21,10 @@ function Event(props) {
     const getEventList=  props.getEventList;
     const listEventByDate =  props.listEventByDate;
 
-
     return (
-        
         <div>
-            {/* <li onClick={() => listEventByDate(date)}> {date} </li> */}
             <ul>
-                <h3> Event Name: {event_name} </h3>
+                <h2> Event Name: {event_name} </h2>
                 <li> Date: {event_date} </li>
                 <li> Time Start: {event_time_start} </li>
                 <li> Time End: {event_time_end} </li>
@@ -46,6 +43,7 @@ function Event(props) {
                             <li> City: {event_city} </li>
                             <li> Zip Code: {event_zipcode} </li>
                         </ul>
+                        <button> Click here for directions </button>
             </ul>
     
         </div>
