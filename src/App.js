@@ -1,9 +1,15 @@
 import "./App.css";
 import axios from "axios";
-import { useState } from "react";
+import { useState, React } from "react";
 import SmartCalendar from "./components/SmartCalendar";
 import FormContactInfo from "./components/FormContactInfo";
 import EventList from "./components/EventList";
+import MapSection from "./components/Map"; // import the map here
+
+const location = {
+  lat: 37.42216,
+  lng: -122.08427,
+};
 
 
 function App() {
@@ -53,6 +59,12 @@ function App() {
   // getEventList()
 
 
+  // >>>>>>>>>>>>>>>>>>>>>>>FORM<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+  const [contactList, setContactList] = useState([]);
+  const postman_url =
+    "https://backend-event-planner-spanish.herokuapp.com/contact_info";
+
+
   // form -> send new contact info:
   const addNewContactInfo = (newContactInfo) => {
     axios
@@ -74,6 +86,7 @@ function App() {
 
   return (
     <div className="App">
+
         <h1 className="App-header"> "Calendario de eventos:" </h1>
 
         <FormContactInfo 
@@ -90,6 +103,15 @@ function App() {
             // getEventList={getEventList}
             listEventByDate = {listEventByDate}
           />
+          
+          //check un pull
+      <h1 className="App-header"> "Calendario de eventos:" </h1>
+      <FormContactInfo addContactCallbackFunc={addNewContactInfo} />
+      <SmartCalendar />
+      <p> Type of event: </p>
+      <EventList eventList={eventData} getEventList={getEventList} />
+      <MapSection className="App-map" location={location} zoomLevel={17} />;
+
     </div>
   );
 }
