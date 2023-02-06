@@ -13,10 +13,7 @@ const location = {
 
 
 function App() {
-
-  const [contactList, setContactList] = useState([]);
   const url_event = "https://backend-event-planner-spanish.herokuapp.com/event_info";
-  const url_contact = "https://backend-event-planner-spanish.herokuapp.com/contact_info";
 
   const [eventOneDate, setEventOneDate] = useState([]);
   // get -> event by date:
@@ -61,8 +58,7 @@ function App() {
 
   // >>>>>>>>>>>>>>>>>>>>>>>FORM<<<<<<<<<<<<<<<<<<<<<<<<<<<<
   const [contactList, setContactList] = useState([]);
-  const postman_url =
-    "https://backend-event-planner-spanish.herokuapp.com/contact_info";
+  const url_contact="https://backend-event-planner-spanish.herokuapp.com/contact_info";
 
 
   // form -> send new contact info:
@@ -104,13 +100,7 @@ function App() {
             listEventByDate = {listEventByDate}
           />
           
-          //check un pull
-      <h1 className="App-header"> "Calendario de eventos:" </h1>
-      <FormContactInfo addContactCallbackFunc={addNewContactInfo} />
-      <SmartCalendar />
-      <p> Type of event: </p>
-      <EventList eventList={eventData} getEventList={getEventList} />
-      <MapSection className="App-map" location={location} zoomLevel={17} />;
+        <MapSection className="App-map" location={location} zoomLevel={17} />;
 
     </div>
   );
