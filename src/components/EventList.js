@@ -1,12 +1,12 @@
 import Event from "./Event";
 import PropTypes from "prop-types";
 
-const EventList =  ({listEventByDate, eventList, getEventList, getOneTypeDate, eventId}) => {
+const EventList =  ({listEventByDate, eventList, getEventList, getOneDirection}) => {
     const listComponents = eventList.map((event) => {
         return (
             <div
                 // className={event.id === eventId ? "selectedEvent" : "None"}
-                key={event.id}
+                key={event.event_id}
                 >
                 <Event
                     event_id = {event.event_id}
@@ -27,6 +27,7 @@ const EventList =  ({listEventByDate, eventList, getEventList, getOneTypeDate, e
                     event_zipcode = {event.event_zipcode}
                     getEventList={getEventList}
                     listEventByDate = {listEventByDate}
+                    getOneDirection = {getOneDirection}
                 />
             </div>
         );
@@ -57,6 +58,7 @@ EventList.proTypes = {
         })),
     getEventList: PropTypes.func.isRequired,
     listEventByDate: PropTypes.func.isRequired,
+    getOneDirection : PropTypes.func.isRequired,
 };
 
 export default EventList;

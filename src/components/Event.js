@@ -20,6 +20,11 @@ function Event(props) {
     const event_zipcode =  props.event_zipcode;
     const getEventList=  props.getEventList;
     const listEventByDate =  props.listEventByDate;
+    const getOneDirection = props.getOneDirection;
+
+    const handleClick = (e) => {
+        getOneDirection(event_id)
+    }
 
     return (
         <div>
@@ -31,11 +36,11 @@ function Event(props) {
                 <li> Link : {event_link} </li>
                 <li> Event Type: </li>
                         <ul>
-                            <li> Family: {event_for_family.toString} </li> 
-                            <li> Adults: {event_for_adults} </li> 
-                            <li> Concert: {event_a_concert} </li> 
-                            <li> For free: {event_free} </li>
-                            <li> Low cost: {event_low_cost} </li>
+                            <li> Family: {event_for_family.toString()} </li> 
+                            <li> Adults: {event_for_adults.toString()} </li> 
+                            <li> Concert: {event_a_concert.toString()} </li> 
+                            <li> For free: {event_free.toString()} </li>
+                            <li> Low cost: {event_low_cost.toString()} </li>
                         </ul>
                 <li> Location: </li> 
                         <ul>
@@ -43,7 +48,7 @@ function Event(props) {
                             <li> City: {event_city} </li>
                             <li> Zip Code: {event_zipcode} </li>
                         </ul>
-                        <button> Click here for directions </button>
+                        <button onClick={handleClick}> Click here for directions </button>
             </ul>
     
         </div>
@@ -69,6 +74,7 @@ Event.proTypes = {
     event_zipcode : PropTypes.number,
     getEventList: PropTypes.func.isRequired,
     listEventByDate: PropTypes.func.isRequired,
+    getOneDirection : PropTypes.func.isRequired,
 };
 
 export default Event;

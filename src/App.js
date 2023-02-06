@@ -5,6 +5,7 @@ import SmartCalendar from "./components/SmartCalendar";
 import FormContactInfo from "./components/FormContactInfo";
 import EventList from "./components/EventList";
 import MapSection from "./components/Map"; // import the map here
+import Event from "./components/Event";
 
 const location = {
   lat: 37.42216,
@@ -37,24 +38,26 @@ function App() {
       });
   };
 
-  // get direcctions:
-  //get cards from one board:
-  // const [eventTypeList, setEventTypeList] = useState([]);
-  // const getEventList = () => {
-  //   axios
-  //     .get(`${url_event}/event_types`)
-  //     .then((response) => {
-  //       console.log(response.data);
-  //       const newEventTypeList = response.data;
-  //       // setEventTypeList(newEventTypeList);
-  //       return newEventTypeList;
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // };
-  // getEventList()
 
+  // get direcctions:
+  const [eventLocation, setEventLocation] = useState([]);
+  
+  const getOneDirection = (event_id) => {
+    axios
+      .get(`${url_event}/${event_id}`)
+      .then((response) => {
+        console.log(response.data);
+          const newLocationData = {
+            lat: response.data.event_latitude,
+            lng: response.data.event_longitude,
+          }
+        setEventLocation(newLocationData);
+
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   // >>>>>>>>>>>>>>>>>>>>>>>FORM<<<<<<<<<<<<<<<<<<<<<<<<<<<<
   const [contactList, setContactList] = useState([]);
@@ -96,11 +99,12 @@ function App() {
 
         <EventList 
             eventList={eventOneDate} 
-            // getEventList={getEventList}
+            getOneDirection = {getOneDirection}
             listEventByDate = {listEventByDate}
           />
           
-        <MapSection className="App-map" location={location} zoomLevel={17} />;
+        <MapSection className="App-map" location={eventLocation} zoomLevel={17} 
+          />;
 
     </div>
   );
