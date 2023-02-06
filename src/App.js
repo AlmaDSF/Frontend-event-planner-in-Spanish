@@ -1,5 +1,6 @@
 import "./App.css";
 import axios from "axios";
+import background from "./components/Photos/Seattle-Space-Needle_2.jpg";
 import { useState, React } from "react";
 import SmartCalendar from "./components/SmartCalendar";
 import FormContactInfo from "./components/FormContactInfo";
@@ -84,28 +85,32 @@ function App() {
 
 
   return (
-    <div className="App">
+    <div className="App" style={{ backgroundImage: `url(${background})`, backgroundRepeat: 'no-repeat',
+    height: 'auto',
+    width:'100%'}}>
+        <header className="title">
+          <h1 className="App-header"> "Calendario de eventos:" </h1>
 
-        <h1 className="App-header"> "Calendario de eventos:" </h1>
+          <FormContactInfo 
+              addContactCallbackFunc={addNewContactInfo} />
+        </header>
+        
 
-        <FormContactInfo 
-            addContactCallbackFunc={addNewContactInfo} />
-
-        <SmartCalendar 
-          listEventByDate={listEventByDate}
-        />
-
-        <h1> List of events: </h1>
-
-        <EventList 
-            eventList={eventOneDate} 
-            getOneDirection = {getOneDirection}
-            listEventByDate = {listEventByDate}
-          />
-          
-        <MapSection className="App-map" location={eventLocation} zoomLevel={17} 
-          />;
-
+        <section>
+            <SmartCalendar 
+              listEventByDate={listEventByDate}
+            />
+        
+          <EventList 
+              eventList={eventOneDate} 
+              getOneDirection = {getOneDirection}
+              listEventByDate = {listEventByDate}
+            />
+            
+          <MapSection className="App-map" location={eventLocation} zoomLevel={17} 
+            />;
+  
+        </section>
     </div>
   );
 }
