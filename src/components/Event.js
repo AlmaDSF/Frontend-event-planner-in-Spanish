@@ -29,9 +29,28 @@ function Event(props) {
   const start_time = event_time_start.slice(16, 22);
   const end_time = event_time_end.slice(16, 22);
 
+  const keywords = [
+    event_for_family,
+    event_for_adults,
+    event_a_concert,
+    event_free,
+    event_low_cost,
+  ];
+  const displayTerms = ["Family", "Adult", "Concert", "Free", "Low Cost"];
+
+  let output = "";
+
+  for (let i = 0; i < keywords.length; i++) {
+    if (keywords[i] === true) {
+      console.log(keywords[i]);
+      const term = displayTerms[i];
+      output += term + ", ";
+    }
+  }
+
   return (
     <div>
-      <ul className="event-list">
+      <ul>
         <h2> Event Name: {event_name} </h2>
         <li> Date: {date}. </li>
         <li> Start Time: {start_time} hrs. </li>
@@ -39,11 +58,7 @@ function Event(props) {
         <li> Link : {event_link} </li>
         <li> Event Type: </li>
         <ul>
-          <li> Family: {event_for_family.toString()} </li>
-          <li> Adults: {event_for_adults.toString()} </li>
-          <li> Concert: {event_a_concert.toString()} </li>
-          <li> For free: {event_free.toString()} </li>
-          <li> Low cost: {event_low_cost.toString()} </li>
+          <li>{output}</li>
         </ul>
         <li> Location: </li>
         <ul>
