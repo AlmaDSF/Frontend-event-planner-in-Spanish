@@ -1,6 +1,6 @@
 import "./App.css";
 import axios from "axios";
-import { useState, React } from "react";
+import { useState, useEffect, React } from "react";
 import SmartCalendar from "./components/SmartCalendar";
 import FormContactInfo from "./components/FormContactInfo";
 import EventList from "./components/EventList";
@@ -90,12 +90,12 @@ function App() {
         <h1
           className="App-header"
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Sofia&effect=fire">
+          href="https://fonts.googleapis.com/css?family=Sofia&effect=fire"
+        >
           {" "}
           Calendario de Eventos{" "}
         </h1>
       </header>
-
       <section className="subscription-form">
         <FormContactInfo addContactCallbackFunc={addNewContactInfo} />
       </section>
@@ -103,12 +103,13 @@ function App() {
       <section>
         <SmartCalendar listEventByDate={listEventByDate} />
 
-        <EventList
-          className="event-list"
-          eventList={eventOneDate}
-          getOneDirection={getOneDirection}
-          listEventByDate={listEventByDate}
-        />
+        <container className="event-list-holder">
+          <EventList
+            eventList={eventOneDate}
+            getOneDirection={getOneDirection}
+            listEventByDate={listEventByDate}
+          />
+        </container>
 
         <MapSection
           className="App-map"

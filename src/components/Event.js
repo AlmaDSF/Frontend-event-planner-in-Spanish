@@ -49,7 +49,7 @@ function Event(props) {
   }
 
   return (
-    <div>
+    <div className="event-list">
       <ul>
         <h2> Event Name: {event_name} </h2>
         <li> Date: {date}. </li>
