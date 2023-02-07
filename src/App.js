@@ -104,6 +104,7 @@ function App() {
         <SmartCalendar listEventByDate={listEventByDate} />
 
         <EventList
+          className="event-list"
           eventList={eventOneDate}
           getOneDirection={getOneDirection}
           listEventByDate={listEventByDate}
