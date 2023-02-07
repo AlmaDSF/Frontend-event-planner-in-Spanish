@@ -5,7 +5,6 @@ const EventList =  ({listEventByDate, eventList, getEventList, getOneDirection})
     const listComponents = eventList.map((event) => {
         return (
             <div
-                // className={event.id === eventId ? "selectedEvent" : "None"}
                 key={event.event_id}
                 >
                 <Event
@@ -44,7 +43,7 @@ EventList.proTypes = {
             event_date : PropTypes.any.isRequired,
             event_time_start : PropTypes.any.isRequired,
             event_time_end : PropTypes.any,
-            event_link : PropTypes.string,
+            event_link : PropTypes.string.isRequired,
             event_latitude : PropTypes.number,
             event_longitude : PropTypes.number,
             event_for_family : PropTypes.bool,

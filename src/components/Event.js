@@ -25,14 +25,18 @@ function Event(props) {
     const handleClick = (e) => {
         getOneDirection(event_id)
     }
+    const date = event_date.slice(0,16)
+    const start_time = event_time_start.slice(16,22)
+    const end_time = event_time_end.slice(16,22)
+
 
     return (
         <div>
             <ul>
                 <h2> Event Name: {event_name} </h2>
-                <li> Date: {event_date} </li>
-                <li> Time Start: {event_time_start} </li>
-                <li> Time End: {event_time_end} </li>
+                <li> Date: {date}. </li>
+                <li> Start Time: {start_time} hrs. </li>
+                <li> End Time: {end_time} hrs. </li>
                 <li> Link : {event_link} </li>
                 <li> Event Type: </li>
                         <ul>
@@ -61,7 +65,7 @@ Event.proTypes = {
     event_date : PropTypes.any.isRequired,
     event_time_start : PropTypes.any.isRequired,
     event_time_end : PropTypes.any,
-    event_link : PropTypes.string,
+    event_link : PropTypes.string.isRequired,
     event_latitude : PropTypes.number,
     event_longitude : PropTypes.number,
     event_for_family : PropTypes.bool,
