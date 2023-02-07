@@ -28,7 +28,6 @@ const FormContactInfo = (props) => {
     return (
         <div>
                 <form onSubmit={handleNewContactSubmit}>
-                    <input className="button" type="submit" value="Newsletter Form:" />
                     <label htmlFor="first_name"></label>
                     <input
                         type="text"
@@ -58,7 +57,7 @@ const FormContactInfo = (props) => {
                         placeholder="Email"
                         onChange={handleChange}
                     />
-                
+                <input className="button" type="submit" value="Subscribe Newsletter:" />
             </form>
         </div>
     );

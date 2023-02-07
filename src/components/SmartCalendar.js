@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import Calendar from 'react-calendar';
-// import "./style/calendar.css";
 import 'react-calendar/dist/Calendar.css';
 
 
