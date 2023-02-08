@@ -2,41 +2,41 @@ import PropTypes from "prop-types";
 import date from "./SmartCalendar";
 
 function Event(props) {
-  const event_id = props.event_id;
-  const event_name = props.event_name;
-  const event_date = props.event_date;
-  const event_time_start = props.event_time_start;
-  const event_time_end = props.event_time_end;
-  const event_link = props.event_link;
-  const event_latitude = props.event_latitude;
-  const event_longitude = props.event_longitude;
-  const event_for_family = props.event_for_family;
-  const event_for_adults = props.event_for_adults;
-  const event_a_concert = props.event_a_concert;
-  const event_free = props.event_free;
-  const event_low_cost = props.event_low_cost;
-  const event_address = props.event_address;
-  const event_city = props.event_city;
-  const event_zipcode = props.event_zipcode;
+  const eventId = props.eventId;
+  const eventName = props.eventName;
+  const eventDate = props.eventDate;
+  const eventTimeStart = props.eventTimeStart;
+  const eventTimeEnd = props.eventTimeEnd;
+  const eventLink = props.eventLink;
+  const eventLatitude = props.eventLatitude;
+  const eventLongitude = props.eventLongitude;
+  const eventForFamily = props.eventForFamily;
+  const eventForAdults = props.eventForAdults;
+  const eventAConcert = props.eventAConcert;
+  const eventFree = props.eventFree;
+  const eventLowCost = props.eventLowCost;
+  const eventAddress = props.eventAddress;
+  const eventCity = props.eventCity;
+  const eventZipCode = props.eventZipCode;
   const getEventList = props.getEventList;
   const listEventByDate = props.listEventByDate;
   const getOneDirection = props.getOneDirection;
 
   const handleClick = (e) => {
-    getOneDirection(event_id);
+    getOneDirection(eventId);
   };
-  const date = event_date.slice(0, 16);
-  const start_time = event_time_start.slice(16, 22);
-  const end_time = event_time_end.slice(16, 22);
+  const date = eventDate.slice(0, 16);
+  const startTime = eventTimeStart.slice(16, 22);
+  const endTime = eventTimeEnd.slice(16, 22);
 
   const keywords = [
-    event_for_family,
-    event_for_adults,
-    event_a_concert,
-    event_free,
-    event_low_cost,
+    eventForFamily,
+    eventForAdults,
+    eventAConcert,
+    eventFree,
+    eventLowCost,
   ];
-  const displayTerms = ["Family", "Adult", "Concert", "Free", "Low Cost"];
+  const displayTerms = ["Familiar", "Adultos", "Concierto", "Gratuito", "Económico"];
 
   let output = "";
 
@@ -51,44 +51,43 @@ function Event(props) {
   return (
     <div className="event-list">
       <ul>
-        <h2> Event Name: {event_name} </h2>
-        <li> Date: {date}. </li>
-        <li> Start Time: {start_time} hrs. </li>
-        <li> End Time: {end_time} hrs. </li>
-        <li> Link : {event_link} </li>
-        <li> Event Type: </li>
+        <h2> Nombre del evento: {eventName} </h2>
+        <li> Fecha del evento: {date}. </li>
+        <li> Horario: {startTime} - {endTime}hrs. </li>
+        <li> Página de internet: {eventLink} </li>
+        <li> Tipo de evento: </li>
         <ul>
           <li>{output}</li>
         </ul>
-        <li> Location: </li>
+        <li> Ubicación: </li>
         <ul>
-          <li> Address: {event_address} </li>
-          <li> City: {event_city} </li>
-          <li> Zip Code: {event_zipcode} </li>
+          <li> Dirección: {eventAddress}. </li>
+          <li> Ciudad: {eventCity}. </li>
+          <li> Código Postal: {eventZipCode} </li>
         </ul>
-        <button onClick={handleClick}> Click here for directions </button>
+        <button onClick={handleClick}> Oprimir para la ubicación </button>
       </ul>
     </div>
   );
 }
 
 Event.proTypes = {
-  event_id: PropTypes.number,
-  event_name: PropTypes.string.isRequired,
-  event_date: PropTypes.any.isRequired,
-  event_time_start: PropTypes.any.isRequired,
-  event_time_end: PropTypes.any,
-  event_link: PropTypes.string.isRequired,
-  event_latitude: PropTypes.number,
-  event_longitude: PropTypes.number,
-  event_for_family: PropTypes.bool,
-  event_for_adults: PropTypes.bool,
-  event_a_concert: PropTypes.bool,
-  event_free: PropTypes.bool,
-  event_low_cost: PropTypes.bool,
-  event_address: PropTypes.string,
-  event_city: PropTypes.string,
-  event_zipcode: PropTypes.number,
+  eventId: PropTypes.number,
+  eventName: PropTypes.string.isRequired,
+  eventDate: PropTypes.any.isRequired,
+  eventTimeStart: PropTypes.any.isRequired,
+  eventTimeEnd: PropTypes.any,
+  eventLink: PropTypes.string.isRequired,
+  eventLatitude: PropTypes.number,
+  eventLongitude: PropTypes.number,
+  eventForFamily: PropTypes.bool,
+  eventForAdults: PropTypes.bool,
+  eventAConcert: PropTypes.bool,
+  eventFree: PropTypes.bool,
+  eventLowCost: PropTypes.bool,
+  eventAddress: PropTypes.string,
+  eventCity: PropTypes.string,
+  eventZipCode: PropTypes.number,
   getEventList: PropTypes.func.isRequired,
   listEventByDate: PropTypes.func.isRequired,
   getOneDirection: PropTypes.func.isRequired,

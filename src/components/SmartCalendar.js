@@ -16,7 +16,7 @@ function SmartCalendar(props) {
     <div className='app'>
 
       <p className='text-center'>
-        <span className='bold'>Selected Date:</span>{' '}
+        <span className='bold'>Fecha elegida:</span>{' '}
         {date.toDateString()}
       </p>
       <div className='calendar-container'>

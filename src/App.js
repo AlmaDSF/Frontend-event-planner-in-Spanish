@@ -45,9 +45,9 @@ function App() {
   // get direcctions:
   const [eventLocation, setEventLocation] = useState([]);
 
-  const getOneDirection = (event_id) => {
+  const getOneDirection = (eventId) => {
     axios
-      .get(`${url_event}/${event_id}`)
+      .get(`${url_event}/${eventId}`)
       .then((response) => {
         console.log(response.data);
         const newLocationData = {

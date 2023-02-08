@@ -8,22 +8,22 @@ const EventList =  ({listEventByDate, eventList, getEventList, getOneDirection})
                 key={event.event_id}
                 >
                 <Event
-                    event_id = {event.event_id}
-                    event_name = {event.event_name}
-                    event_date = {event.event_date}
-                    event_time_start = {event.event_time_start} 
-                    event_time_end = {event.event_time_end}
-                    event_link = {event.event_link}
-                    event_latitude = {event.event_latitude} 
-                    event_longitude = {event.event_longitude}
-                    event_for_family = {event.event_for_family}
-                    event_for_adults =  {event.event_for_adults}
-                    event_a_concert = {event.event_a_concert}
-                    event_free = {event.event_free}
-                    event_low_cost = {event.event_low_cost}
-                    event_address = {event.event_address}
-                    event_city = {event.event_city}
-                    event_zipcode = {event.event_zipcode}
+                    eventId = {event.event_id}
+                    eventName = {event.event_name}
+                    eventDate = {event.event_date}
+                    eventTimeStart = {event.event_time_start} 
+                    eventTimeEnd = {event.event_time_end}
+                    eventLink = {event.event_link}
+                    eventLatitude = {event.event_latitude} 
+                    eventLongitude = {event.event_longitude}
+                    eventForFamily = {event.event_for_family}
+                    eventForAdults =  {event.event_for_adults}
+                    eventAConcert = {event.event_a_concert}
+                    eventFree = {event.event_free}
+                    eventLowCost = {event.event_low_cost}
+                    eventAddress = {event.event_address}
+                    eventCity = {event.event_city}
+                    eventZipCode = {event.event_zipcode}
                     getEventList={getEventList}
                     listEventByDate = {listEventByDate}
                     getOneDirection = {getOneDirection}
@@ -38,22 +38,22 @@ const EventList =  ({listEventByDate, eventList, getEventList, getOneDirection})
 EventList.proTypes = {
     eventList: PropTypes.arrayOf(
         PropTypes.shape({
-            event_id : PropTypes.number,
-            event_name : PropTypes.string.isRequired,
-            event_date : PropTypes.any.isRequired,
-            event_time_start : PropTypes.any.isRequired,
-            event_time_end : PropTypes.any,
-            event_link : PropTypes.string.isRequired,
-            event_latitude : PropTypes.number,
-            event_longitude : PropTypes.number,
-            event_for_family : PropTypes.bool,
-            event_for_adults :  PropTypes.bool,
-            event_a_concert : PropTypes.bool,
-            event_free : PropTypes.bool,
-            event_low_cost : PropTypes.bool,
-            event_address : PropTypes.string,
-            event_city : PropTypes.string,
-            event_zipcode : PropTypes.number,
+            eventId : PropTypes.number,
+            eventName : PropTypes.string.isRequired,
+            eventDate : PropTypes.any.isRequired,
+            eventTimeStart : PropTypes.any.isRequired,
+            eventTimeEnd : PropTypes.any,
+            eventLink : PropTypes.string.isRequired,
+            eventLatitude : PropTypes.number,
+            eventLongitude : PropTypes.number,
+            eventForFamily : PropTypes.bool,
+            eventForAdults :  PropTypes.bool,
+            eventAConcert : PropTypes.bool,
+            eventFree : PropTypes.bool,
+            eventLowCost : PropTypes.bool,
+            eventAddress : PropTypes.string,
+            eventCity : PropTypes.string,
+            eventZipCode : PropTypes.number,
         })),
     getEventList: PropTypes.func.isRequired,
     listEventByDate: PropTypes.func.isRequired,
