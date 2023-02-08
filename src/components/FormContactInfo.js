@@ -36,7 +36,7 @@ const FormContactInfo = (props) => {
           id="first_name"
           name="first_name"
           value={formData.first_name}
-          placeholder="First name"
+          placeholder="Nombre"
           onChange={handleChange}
         />
 
@@ -46,7 +46,7 @@ const FormContactInfo = (props) => {
           id="last_name"
           name="last_name"
           value={formData.last_name}
-          placeholder="Last name"
+          placeholder="Apellido"
           onChange={handleChange}
         />
 
@@ -56,10 +56,10 @@ const FormContactInfo = (props) => {
           id="email"
           name="email"
           value={formData.email}
-          placeholder="Email"
+          placeholder="Correo electrónico"
           onChange={handleChange}
         />
-        <input className="button" type="submit" value="Subscribe Newsletter" />
+        <input className="button" type="submit" value="Suscribase aqui" />
       </form>
     </div>
   );

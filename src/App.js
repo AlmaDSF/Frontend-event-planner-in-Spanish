@@ -5,12 +5,7 @@ import SmartCalendar from "./components/SmartCalendar";
 import FormContactInfo from "./components/FormContactInfo";
 import EventList from "./components/EventList";
 import MapSection from "./components/Map"; // import the map here
-import Event from "./components/Event";
 
-const location = {
-  lat: 37.42216,
-  lng: -122.08427,
-};
 
 function App() {
   const url_event =
@@ -92,13 +87,13 @@ function App() {
           rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Sofia&effect=fire"
         >
-          {" "}
-          Calendario de Eventos{" "}
+          Calendario de Eventos
         </h1>
       </header>
       <section className="subscription-form">
         <FormContactInfo addContactCallbackFunc={addNewContactInfo} />
       </section>
+      <br />
       <br />
       <section>
         <SmartCalendar listEventByDate={listEventByDate} />

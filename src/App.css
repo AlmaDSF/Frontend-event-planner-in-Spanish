@@ -1,16 +1,12 @@
 /* MAPS */
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600&display=swap');
 
-
-
 body {
   font-family: 'Nunito Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: rgb(228, 174, 192);
 }
-
-
 
 html,
 body {
@@ -42,7 +38,7 @@ code {
 
 section {
   display: flex;
-  justify-content: space-evenly;
+  justify-content:space-evenly;
   flex-direction: row;
 }
 
@@ -64,19 +60,23 @@ section {
 
 
 .event-list{
-  padding:1%;
+  padding: 10px;
   box-shadow: 5px 10px 90px 1px rgb(15, 15, 15) ;
   background-size: cover;
   display: flexbox;
   margin-right: 5%;
   height: 57vh;
+  padding-bottom: 0%
 }
 
 .event-list-holder{
+  padding-top: 50px;
   box-shadow: 5px 10px 90px 1px rgb(91, 66, 74) ;
   background-size: cover;
   display: flexbox;
-  margin-right: 5%;
+  margin-right: 0%;
   height: 57vh;
   overflow: scroll;
+
+  
 }
