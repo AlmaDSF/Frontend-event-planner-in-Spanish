@@ -106,7 +106,7 @@ function App() {
           zoomLevel={17}
         />
       </main>
-      <footer>Created by</footer>
+      <footer>© 2023 Las Poderosas</footer>
     </div>
   );
 }

@@ -17,14 +17,14 @@
       "footer footer";
   grid-template-rows: 10% 5% 75% 10%;
   grid-gap: 5px;
-  width: 200vh;
-  height: 300vh;
+  width: 220vh;
+  height: 150vh;
   margin: auto;
 }
 
 .title {
 grid-area: titulo;
-background-color: pink;
+/* background-color: pink; */
 text-align: center;
 }
 
@@ -32,11 +32,11 @@ text-align: center;
   font-family: Sofia, sans-serif;
   font-size: 100px;
 }
- 
+
 nav {
   grid-area: form;
-  background-color: green;
- 
+  /* background-color: green; */
+
   /* text-align: end;
   position: absolute;
   right: 10px; */
@@ -50,7 +50,7 @@ nav {
 
 aside {
   grid-area: calendar;
-  background-color: gold;
+  /* background-color: gold; */
   display: flex;
   justify-content:space-evenly;
   flex-direction: row;
@@ -72,12 +72,15 @@ aside {
   
 main {
     grid-area: map;
-    background-color: blue;
+    /* background-color: blue; */
     align-content: center;
     }
     
 
 footer {
   grid-area: footer;
-  background-color: orange;
+  color: red;
+  font-size: larger;
+  text-align: center;
+  /* background-color: orange; */
 }
