@@ -8,7 +8,7 @@
 // import { createRoot } from 'react-dom/client';
 
 // const container = document.getElementById('app');
-// const root = createRoot(container); 
+// const root = createRoot(container);
 // root.render(<App tab="home" />);
 
 //1
@@ -24,11 +24,9 @@
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 // reportWebVitals();
 
-
 //2
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
 import App from "./App";
 
 ReactDOM.render(<App />, document.getElementById("root"));

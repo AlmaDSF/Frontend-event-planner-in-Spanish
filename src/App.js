@@ -81,25 +81,16 @@ function App() {
   return (
     <div className="App_background">
       <header className="title">
-        <h1
-          className="App-header"
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Sofia&effect=fire"
-        >
-          Calendario de Eventos
-        </h1>
+        <h1 className="App-header">Calendario de Eventos</h1>
       </header>
       <nav className="form">
         <section className="subscription-form">
           <FormContactInfo addContactCallbackFunc={addNewContactInfo} />
         </section>
       </nav>
-      <br />
-      <br />
+
       <aside>
         <SmartCalendar listEventByDate={listEventByDate} />
-      </aside>
-      <main>
         <container className="event-list-holder">
           <EventList
             eventList={eventOneDate}
@@ -107,6 +98,8 @@ function App() {
             listEventByDate={listEventByDate}
           />
         </container>
+      </aside>
+      <main>
         <MapSection
           className="App-map"
           location={eventLocation}

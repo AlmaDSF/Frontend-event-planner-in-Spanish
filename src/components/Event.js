@@ -36,7 +36,13 @@ function Event(props) {
     eventFree,
     eventLowCost,
   ];
-  const displayTerms = ["Familiar", "Adultos", "Concierto", "Gratuito", "Económico"];
+  const displayTerms = [
+    "Familiar",
+    "Adultos",
+    "Concierto",
+    "Gratuito",
+    "Económico",
+  ];
 
   let output = "";
 
@@ -53,7 +59,10 @@ function Event(props) {
       <ul>
         <h2> Nombre del evento: {eventName} </h2>
         <li> Fecha del evento: {date}. </li>
-        <li> Horario: {startTime} - {endTime}hrs. </li>
+        <li>
+          {" "}
+          Horario: {startTime} - {endTime}hrs.{" "}
+        </li>
         <li> Página de internet: {eventLink} </li>
         <li> Tipo de evento: </li>
         <ul>

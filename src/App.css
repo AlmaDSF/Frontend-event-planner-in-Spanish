@@ -1,55 +1,47 @@
-/* MAPS */
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600&display=swap');
-
-body {
-  font-family: 'Nunito Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background: rgb(228, 174, 192);
-}
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-.App-map{
-  position: relative;
-}
-
-:root {
-  --main-blue: #00253a;
-  --main-green: #2e933c;
-  --white: #ffffff;
-}
-
 /* APP */
 @font-face{
   font-family : Sofia;
   src: url(./fonts/Sofia-Regular.ttf)
 }
 
-main {
+/* main {
   display: flex;
   justify-content:space-evenly;
   flex-direction: row;
-}
+} */
+
 
 .App_background {
   background : url(./components/Photos/Seattle-Space-Needle_2.jpg);
   background-size: cover;
+
+  display: grid;
+  grid-template-columns: 60% 40%;
+  grid-template-areas:
+      "titulo titulo"
+      "form form"
+      "calendar map"
+      "footer footer";
+  grid-template-rows: 10% 5% 75% 10%;
+  grid-gap: 5px;
+  width: 200vh;
+  height: 300vh;
+  margin: auto;
 }
 
-.subscription-form {
-  position: absolute;
-  right: 10px;
+
+
+  /* padding-top: 50px; */
+  /* box-shadow: 5px 10px 90px 1px rgb(91, 66, 74) ; */
+  /* background-size: cover; */
+  /* display: flexbox; */
+  /* margin-right: 0%;
+  /* height: 57vh; */
+  
+
+.title {
+grid-area: titulo;
+background-color: pink;
 }
 
 .App-header {
@@ -57,26 +49,54 @@ main {
   font-family: Sofia, sans-serif;
   font-size: 100px;
 }
+ 
+nav {
+  grid-area: form;
+  background-color: green;
+  text-align: end;
+  align-content: center;
+  position: absolute;
+  right: 10px;
+  }
 
+/* .subscription-form {
+  position: absolute;
+  right: 10px;
+} */
 
-.event-list{
+aside {
+  grid-area: calendar;
+  background-color: gold;
+  display: flexbox;
+  justify-content:space-evenly;
+  flex-direction: row;
+  }
+
+  .event-list{
   padding: 10px;
   box-shadow: 5px 10px 90px 1px rgb(15, 15, 15) ;
   background-size: cover;
-  display: flexbox;
-  margin-right: 5%;
-  height: 57vh;
-  padding-bottom: 0%
+  /* display: flexbox; */
+  /* margin-right: 3%; */
+  width: 65vh;
+  height: 40vh;
+  padding-bottom: 0%;
+  overflow: scroll; 
 }
 
 .event-list-holder{
-  padding-top: 50px;
-  box-shadow: 5px 10px 90px 1px rgb(91, 66, 74) ;
-  background-size: cover;
-  display: flexbox;
-  margin-right: 0%;
-  height: 57vh;
   overflow: scroll;
-
+}
   
+
+
+  main {
+    grid-area: map;
+    background-color: blue;
+    }
+    
+
+footer {
+  grid-area: footer;
+  background-color: orange;
 }
