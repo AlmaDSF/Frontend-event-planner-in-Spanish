@@ -6,7 +6,6 @@ import FormContactInfo from "./components/FormContactInfo";
 import EventList from "./components/EventList";
 import MapSection from "./components/Map"; // import the map here
 
-
 function App() {
   const url_event =
     "https://backend-event-planner-spanish.herokuapp.com/event_info";
@@ -90,14 +89,17 @@ function App() {
           Calendario de Eventos
         </h1>
       </header>
-      <section className="subscription-form">
-        <FormContactInfo addContactCallbackFunc={addNewContactInfo} />
-      </section>
+      <nav className="form">
+        <section className="subscription-form">
+          <FormContactInfo addContactCallbackFunc={addNewContactInfo} />
+        </section>
+      </nav>
       <br />
       <br />
-      <section>
+      <aside>
         <SmartCalendar listEventByDate={listEventByDate} />
-
+      </aside>
+      <main>
         <container className="event-list-holder">
           <EventList
             eventList={eventOneDate}
@@ -105,13 +107,13 @@ function App() {
             listEventByDate={listEventByDate}
           />
         </container>
-
         <MapSection
           className="App-map"
           location={eventLocation}
           zoomLevel={17}
         />
-      </section>
+      </main>
+      <footer>Created by</footer>
     </div>
   );
 }

@@ -36,7 +36,7 @@ code {
   src: url(./fonts/Sofia-Regular.ttf)
 }
 
-section {
+main {
   display: flex;
   justify-content:space-evenly;
   flex-direction: row;
