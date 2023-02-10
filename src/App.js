@@ -1,4 +1,4 @@
-import "./App.css";
+import "./style/App.css";
 import axios from "axios";
 import { useState, useEffect, React } from "react";
 import SmartCalendar from "./components/SmartCalendar";
@@ -91,19 +91,19 @@ function App() {
 
       <aside>
         <SmartCalendar listEventByDate={listEventByDate} />
-        <container className="event-list-holder">
+        <section className="event-list-holder">
           <EventList
             eventList={eventOneDate}
             getOneDirection={getOneDirection}
             listEventByDate={listEventByDate}
           />
-        </container>
+        </section>
       </aside>
       <main>
         <MapSection
           className="App-map"
           location={eventLocation}
-          zoomLevel={17}
+          zoomLevel={15}
         />
       </main>
       <footer>© 2023 Las Poderosas</footer>

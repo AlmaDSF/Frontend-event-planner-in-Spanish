@@ -1,11 +1,11 @@
 /* APP */
 @font-face{
   font-family : Sofia;
-  src: url(./fonts/Sofia-Regular.ttf)
+  src: url(../fonts/Sofia-Regular.ttf)
 }
 
 .App_background {
-  background : url(./components/Photos/Seattle-Space-Needle_2.jpg);
+  background : url(../components/Photos/Seattle-Space-Needle_2.jpg);
   background-size: cover;
 
   display: grid;
@@ -59,7 +59,7 @@ aside {
   flex-direction: row;
   }
 
-  .event-list{
+.event-list{
   padding: 10px;
   box-shadow: 5px 10px 90px 1px rgb(15, 15, 15) ;
   background-size: cover;
@@ -113,4 +113,13 @@ footer {
   background-color: pink;
   box-shadow: 0 4px #666;
   transform: translateY(4px);
+}
+
+.error-data {
+  color: white;
+  background-color: red;
+  /* -webkit-text-stroke: 2px black; */
+  /* text-emphasis: triangule blue; */
+  /* text-emphasis-style: "*"; */
+
 }

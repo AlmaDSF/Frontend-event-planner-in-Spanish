@@ -68,7 +68,6 @@ function Event(props) {
             <a href={eventLink} className="link-web-site">
             Página de internet: {eventLink}
             </a>     
-            {/* <button className="button-link"> Oprima aqui </button> */}
             {/* </a>     */}
         </li>
         <li> Tipo de evento: </li>
