@@ -9,6 +9,9 @@ const INITIAL_CONTACT_INFO = {
 const FormContactInfo = (props) => {
   const [formData, setFormData] = useState(INITIAL_CONTACT_INFO);
 
+  const [formErrors, setFormErrors] = useState("");
+  const [isDataValid, setIsDataValid] = useState(true);
+
   const handleChange = (e) => {
     console.log(
       `Target name: ${e.target.name} Target value: ${e.target.value} `
@@ -23,10 +26,26 @@ const FormContactInfo = (props) => {
   const handleNewContactSubmit = (e) => {
     console.log("press button");
     e.preventDefault();
-    alert(`Thanks ${formData.first_name}: we'll send you more events soon.`);
-    setFormData(INITIAL_CONTACT_INFO);
-    props.addContactCallbackFunc(formData);
+    setFormErrors(validateData(formData));
   };
+
+  const validateData = (values) => {
+    let errors = "";
+  
+    if (formData.email.length === 0 || formData.first_name.length === 0 || formData.last_name.length === 0) {
+      errors = "Por favor ingresa toda la informacion";
+
+    } else {
+      alert(`Gracias ${formData.first_name}: te enviaremos más eventos pronto.`);
+      setFormData(INITIAL_CONTACT_INFO);
+      props.addContactCallbackFunc(formData);
+      setIsDataValid(true)
+    }
+    return(errors)
+  
+
+
+  }
   return (
     <div>
       <form onSubmit={handleNewContactSubmit}>
@@ -60,6 +79,8 @@ const FormContactInfo = (props) => {
           onChange={handleChange}
         />
         <input className="button" type="submit" value="Suscribase aqui" />
+        <p className="error-data"> {formErrors} </p>
+  
       </form>
     </div>
   );
