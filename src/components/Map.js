@@ -13,7 +13,7 @@ const LocationPin = ({ text }) => (
 
 const Map = ({ location, zoomLevel }) => (
   <div className="map">
-    <h2 className="map-h2">Ubicación del Evento</h2>
+    <h2 className="map-h2">Ubicación del Evento:</h2>
 
     <div className="google-map">
       <GoogleMapReact
