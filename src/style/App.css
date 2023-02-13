@@ -4,27 +4,40 @@
   src: url(../fonts/Sofia-Regular.ttf)
 }
 
-.App_background {
+body{
+  /* background-color: pink; */
   background : url(../components/Photos/Seattle-Space-Needle_2.jpg);
   background-size: cover;
-
+}
+.App_background {
   display: grid;
   grid-template-columns: 60% 40%;
   grid-template-areas:
       "titulo titulo"
       "form form"
-      "calendar map"
-      "footer footer";
-  grid-template-rows: 13% 5% 75% 10%;
+      "calendar map";
+  grid-template-rows: 10% 10% 80% ;
   grid-gap: 5px;
-  width: 230vh;
-  height: 150vh;
+  width: 260vh;
+  height: 135vh;
   margin: auto;
+
+  -webkit-transform:scale(0.85);
+  -moz-transform:scale(0.85);
+  -ms-transform:scale(0.85);
+  transform:scale(0.78);
+  -ms-transform-origin:0 0;
+  -webkit-transform-origin:0 0;
+  -moz-transform-origin:0 0;
+  transform-origin:0 0;
+
+
+
 }
 
 .title {
 grid-area: titulo;
-background-color: pink;
+/* background-color: pink; */
 text-align: center;
 }
 
@@ -38,18 +51,14 @@ text-align: center;
   /* background-color: green; */
 
   text-align:end;
-  /* align-items: baseline; */
   align-self: center;
-  /* left: 20px; */
-  /* position: absolute; */
-  /* right: 10px; */
 }
 
-/* .subscription-form {
+.subscription-form {
   align-content:flex-end;
   position: relative;
-  right: 10px;
-} */
+  right: 35px;
+}
 
 aside {
   grid-area: calendar;
@@ -61,9 +70,9 @@ aside {
 
 .event-list{
   padding: 10px;
-  box-shadow: 5px 10px 90px 1px rgb(15, 15, 15) ;
+  box-shadow: 5px 5px 70px 1px rgb(15, 15, 15) ;
   background-size: cover;
-  width: 65vh;
+  width: 70vh;
   height: 40vh;
   padding-bottom: 0%;
   overflow: scroll; 
@@ -79,17 +88,8 @@ main {
     align-content: center;
     }
     
-
-footer {
-  grid-area: footer;
-  color: white;
-  font-size: larger;
-  text-align: center;
-  /* background-color: orange; */
-}
-
 .link-web-site{
-  color: purple
+  color: rgb(92, 9, 92)
 }
 
 .button-link {
@@ -101,7 +101,7 @@ footer {
   text-decoration: none;
   outline: none;
   color: #fff;
-  background-color: lightpink;
+  background-color: rgb(226, 145, 159);
   border: none;
   border-radius: 18px;
   box-shadow: 0 5px #999;
@@ -110,7 +110,7 @@ footer {
 .button-link:hover {background-color: black}
 
 .button-link:active {
-  background-color: pink;
+  background-color: rgb(236, 161, 174);
   box-shadow: 0 4px #666;
   transform: translateY(4px);
 }
@@ -118,8 +118,11 @@ footer {
 .error-data {
   color: white;
   background-color: red;
-  /* -webkit-text-stroke: 2px black; */
-  /* text-emphasis: triangule blue; */
-  /* text-emphasis-style: "*"; */
+}
 
+h3 {
+  color: white;
+  font-size: larger;
+  position: relative;
+  left: 939px;
 }
