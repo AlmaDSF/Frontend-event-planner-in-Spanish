@@ -54,7 +54,6 @@ function Event(props) {
     }
   }
 
-
   return (
     <div className="event-list">
       <ul>
@@ -64,11 +63,10 @@ function Event(props) {
           {" "}
           Horario: {startTime} - {endTime}hrs.{" "}
         </li>
-        <li > 
-            <a href={eventLink} className="link-web-site">
+        <li>
+          <a href={eventLink} className="link-web-site">
             Página de internet: {eventLink}
-            </a>     
-            {/* </a>     */}
+          </a>
         </li>
         <li> Tipo de evento: </li>
         <ul>
@@ -80,7 +78,10 @@ function Event(props) {
           <li> Ciudad: {eventCity}. </li>
           <li> Código Postal: {eventZipCode} </li>
         </ul>
-        <button className="button-link" onClick={handleClick}> Oprimir para la ubicación </button>
+        <button className="button-link" onClick={handleClick}>
+          {" "}
+          Oprimir para la ubicación{" "}
+        </button>
       </ul>
     </div>
   );

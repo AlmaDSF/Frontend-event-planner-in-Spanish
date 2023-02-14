@@ -15,7 +15,6 @@
 }
 
 body{
-  /* background-color: pink; */
   background : url(../components/Photos/Seattle-Space-Needle_2.jpg);
   background-size: cover;
 }
@@ -44,26 +43,26 @@ body{
 
 .title {
 grid-area: titulo;
-/* background-color: pink; */
 text-align: center;
+position: static;
 }
 
 .App-header {
   font-family: Sofia, sans-serif;
-  font-size: 70px;
+  font-size: 9.5vh;
 }
 
 .form {
   grid-area: form;
-  /* background-color: green; */
   text-align:end;
   align-self: center;
+  padding-top: 50px;
 }
 
 /* contact_info */
 input{
   font-family:  Montserrat_alte_2;
-  font-size: 15px;
+  font-size: 2vh;
 }
 
 .subscription-form {
@@ -74,7 +73,6 @@ input{
 
 aside {
   grid-area: calendar;
-  /* background-color: gold; */
   display: flex;
   justify-content:space-evenly;
   flex-direction: row;
@@ -83,7 +81,7 @@ aside {
 /* Selected date */
 .text-center{
   font-family:  Montserrat_alte_3;
-  font-size: 15px;
+  font-size: 4vh;
 }
 
 .event-list{
@@ -93,8 +91,6 @@ aside {
   width: 70vh;
   height: 40vh;
   padding-bottom: 0%;
-  overflow: scroll; 
-
   font-family : Montserrat_alte_2;
   font-size: 14px;
 }
@@ -105,14 +101,13 @@ aside {
   
 main {
     grid-area: map;
-    /* background-color: blue; */
     align-content: center;
     }
   
 /* Title map */
-.map-h2{
+h2{
       font-family: Montserrat_alte_3;
-      font-size: 15px;
+      font-size: 4vh;
     }
 
 .link-web-site{

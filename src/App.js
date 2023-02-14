@@ -21,7 +21,6 @@ function App() {
         console.log(response.data);
         const newEventList = [];
         for (const event of response.data) {
-          //TODO: The comparison might be error prone given the slice function
           if (
             event.event_date.replace(/,/g, "").slice(0, 15) ===
             date.toGMTString().replace(/,/g, "").slice(0, 15)
