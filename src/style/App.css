@@ -1,7 +1,17 @@
 /* APP */
 @font-face{
   font-family : Sofia;
-  src: url(../fonts/Sofia-Regular.ttf)
+  src: url(../fonts/Sofia-Regular.ttf);
+}
+
+@font-face {
+  font-family : Montserrat_alte_2;
+  src:  url(../fonts/MontserratAlternates-Regular.ttf);
+}
+
+@font-face {
+  font-family : Montserrat_alte_3;
+  src:  url(../fonts/MontserratAlternates-Medium.ttf);
 }
 
 body{
@@ -25,14 +35,11 @@ body{
   -webkit-transform:scale(0.85);
   -moz-transform:scale(0.85);
   -ms-transform:scale(0.85);
-  transform:scale(0.78);
+  transform:scale(0.70);
   -ms-transform-origin:0 0;
   -webkit-transform-origin:0 0;
   -moz-transform-origin:0 0;
   transform-origin:0 0;
-
-
-
 }
 
 .title {
@@ -49,9 +56,14 @@ text-align: center;
 .form {
   grid-area: form;
   /* background-color: green; */
-
   text-align:end;
   align-self: center;
+}
+
+/* contact_info */
+input{
+  font-family:  Montserrat_alte_2;
+  font-size: 15px;
 }
 
 .subscription-form {
@@ -68,6 +80,12 @@ aside {
   flex-direction: row;
   }
 
+/* Selected date */
+.text-center{
+  font-family:  Montserrat_alte_3;
+  font-size: 15px;
+}
+
 .event-list{
   padding: 10px;
   box-shadow: 5px 5px 70px 1px rgb(15, 15, 15) ;
@@ -76,6 +94,9 @@ aside {
   height: 40vh;
   padding-bottom: 0%;
   overflow: scroll; 
+
+  font-family : Montserrat_alte_2;
+  font-size: 14px;
 }
 
 .event-list-holder{
@@ -87,7 +108,13 @@ main {
     /* background-color: blue; */
     align-content: center;
     }
-    
+  
+/* Title map */
+.map-h2{
+      font-family: Montserrat_alte_3;
+      font-size: 15px;
+    }
+
 .link-web-site{
   color: rgb(92, 9, 92)
 }
@@ -106,6 +133,7 @@ main {
   border-radius: 18px;
   box-shadow: 0 5px #999;
 }
+
 
 .button-link:hover {background-color: black}
 

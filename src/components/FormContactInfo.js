@@ -42,13 +42,11 @@ const FormContactInfo = (props) => {
       setIsDataValid(true)
     }
     return(errors)
-  
-
 
   }
   return (
     <div>
-      <form onSubmit={handleNewContactSubmit}>
+      <form onSubmit={handleNewContactSubmit} className="form_font">
         <label htmlFor="first_name"></label>
         <input
           type="text"
