@@ -6,7 +6,7 @@
 4. Setup
  
 ## Description of the application
-In the frontend-event-planner-in-spanish application a calendar is displayed, the image of the space needle is shown as the background, a location to add contact information if the user is interested in subscribing to the newsletter.
+In the frontend-event-planner-in-spanish application all the information is displayed in Spanish.  A calendar is displayed, the image of the space needle is shown as the background, if the user is interested in suscribing to the newsletter they can input their information. 
 
 The calendar allows users to pick a date. If the user picks a date and there is information in the [backend-event-planner-in-spanish](https://github.com/nancy-lee89/backend-event-planner-in-spanish)  application then the application will display information about an event on that date. 
 
