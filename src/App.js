@@ -37,7 +37,10 @@ function App() {
   };
 
   // get direcctions:
-  const [eventLocation, setEventLocation] = useState([]);
+  const [eventLocation, setEventLocation] = useState({
+    lat: 47.5996538,
+    lng: -122.3279151,
+  });
 
   const getOneDirection = (eventId) => {
     axios
