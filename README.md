@@ -1,4 +1,4 @@
-#Frontend-event-planner-in-spanish
+# Frontend-event-planner-in-spanish
 ## Table of Contents 
 1. Description of the application
 2. Technologies 
