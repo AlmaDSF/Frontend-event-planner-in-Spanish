@@ -3,7 +3,7 @@
 1. Description of the application
 2. Technologies 
 3. List of dependencies
-4. [Setup](setup.md)
+4. Setup
  
 ## Description of the application
 In the frontend-event-planner-in-spanish application a calendar is displayed, the image of the space needle is shown as the background, a location to add contact information if the user is interested in subscribing to the newsletter.
@@ -37,7 +37,7 @@ Once the user clicks a date, the user can have access to the events on the date 
 
 
 ## Setup 
-The setup information is found [here](setup.md). 
+In order to set this application you need to run `yarn install` in the project directory.  Once this has successfully run then you will need to run run `yarn start` to begin the local development server. 
 
 ## Deployment 
 - The front-end here https://frontend-event-planner-spanish.herokuapp.com/.
