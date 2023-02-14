@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# Frontend-event-planner-in-spanish
+## Table of Contents 
+1. Description of the application
+2. Technologies 
+3. List of dependencies
+4. Setup
+ 
+## Description of the application
+The frontend-event-planner-in-Spanish application is displayed in Spanish, but the code is written in English.  A calendar is displayed, the image of the space needle is shown as the background, and if the user is interested in subscribing to the newsletter they can input their information. Lastly the this application was deployed on Heroku.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The calendar allows users to pick a date. If the user picks a date and there is information in the event information [database](https://backend-event-planner-spanish.herokuapp.com/event_info) from the [backend-event-planner-in-spanish](https://github.com/nancy-lee89/backend-event-planner-in-spanish)
+the application. Then the application will display information about an event on that date. Once the user clicks a date, the user can access the event or events on the date picked. Each event listed will have the date, time, and type of event (free, for adults, for families, a concert, or a sport). As well as the address of the event and the location of the event on a map. 
 
-## Available Scripts
+If the user is interested in subscribing to the newsletter, they can input their information, which will be stored in the contact information [database](https://backend-event-planner-spanish.herokuapp.com/contact_info). 
 
-In the project directory, you can run:
 
-### `yarn start`
+## Technologies
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Google maps javascript api
+- Google font
+- REACT JS (Javascript, HTML, CSS) 
+- Heroku
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## List of dependencies 
+- "@testing-library/jest-dom"
+- "@testing-library/react"
+- "@testing-library/user-event"
+- "Axios"
+- "Google-map-react"
+- "React"
+- "React-calendar"
+- "React-dom"
+- "React-scripts"
+- "Web-vitals"
+- "@iconify/icons-mdi"   
+- "@iconify/react"
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Setup 
+In order to set this application you need to run `yarn install` in the project directory.  Once this has successfully run then you will need to run run `yarn start` to begin the local development server. 
 
-### `yarn build`
+## Deployment 
+- The front-end here https://frontend-event-planner-spanish.herokuapp.com/.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
